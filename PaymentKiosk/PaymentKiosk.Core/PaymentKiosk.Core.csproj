@@ -56,7 +56,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Domain\Address.cs" />
     <Compile Include="Domain\CreditCard.cs" />
     <Compile Include="Domain\Customer.cs" />
@@ -65,7 +64,9 @@
     <Compile Include="Services\SmsService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

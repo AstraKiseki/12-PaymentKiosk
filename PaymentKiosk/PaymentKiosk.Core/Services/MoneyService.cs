@@ -14,8 +14,6 @@ namespace PaymentKiosk.Core.Services
 
         public static bool Charge(Customer customer, CreditCard creditCard, decimal amount)
         {
-            // call Stripe API
-
             var chargeDetails = new StripeChargeCreateOptions();
 
             chargeDetails.Amount = (int)amount * 100;
@@ -38,9 +36,7 @@ namespace PaymentKiosk.Core.Services
             {
                 throw new Exception(response.FailureMessage);
             }
-
             return response.Paid;
-
         }
     }
 }

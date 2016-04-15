@@ -16,7 +16,6 @@ namespace PaymentKiosk.Core.Services
             public static void SendSms(string to, string message)
             {
                 var twilio = new TwilioRestClient(TwilioAccountSid, TwilioAuthToken);
-
                 twilio.SendMessage(FromNumber, to, message);
             }
         }

@@ -26,7 +26,6 @@ namespace PaymentKiosk
         {
             InitializeComponent();
         }
-
         private void TransactionButton_Click(object sender, RoutedEventArgs e)
         {
             var customer = new Customer
@@ -42,7 +41,8 @@ namespace PaymentKiosk
                 ExpiryDate = DateTime.Parse(ExpiryBox.Text),
             };
 
-            try {
+            try
+            {
                 bool success = MoneyService.Charge(customer, creditCard, decimal.Parse(CreditBox.Text));
 
                 if (success)
@@ -55,7 +55,6 @@ namespace PaymentKiosk
                     MessageBox.Show("Payment not successful.");
                 }
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
